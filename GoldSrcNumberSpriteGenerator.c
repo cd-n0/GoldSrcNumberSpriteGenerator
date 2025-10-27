@@ -197,7 +197,7 @@ int main(int argc, char *argv[])
         for (int i = 0; i < 10; ++i) {
             /* stbtt_BakeFontBitmap's implementation does the memset for us */
             int res = stbtt_BakeFontBitmap((unsigned char*)sb.items, 0, font_height, digits_sprite_bitmap, max_width, max_height, '0' + i, 1, cdata);
-            if (0 >= res) {
+            if (0 > res) {
                 nob_log(NOB_ERROR, "Failed creating the font bitmap. stbtt_BakeFontBitmap returned: %d", res);
                 return 4;
             }
